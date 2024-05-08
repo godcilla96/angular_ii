@@ -1,9 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Ramschema } from '../model/ramschema';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  constructor() { }
+  private url:string = "assets/ramschema_hy23.json";
+
+  constructor(private http: HttpClient) { }
+
+  getRamschema(): Observable<Ramschema> {
+    return this.http.get<Ramschema>(this.url);
+
+  }
 }
