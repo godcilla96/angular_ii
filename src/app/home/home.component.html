@@ -1,17 +1,18 @@
-<h2>Ramschema</h2>
+<h2 class="section-title">Ramschema</h2>
 
-<div>
-  <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="applyFilter()">
+<div class="search-container">
+  <input class="search-input" type="text" placeholder="Sök ..." [(ngModel)]="searchTerm" (input)="applyFilter()">
 </div>
 
-<ul>
-  <li *ngFor="let course of filteredCoursesList">
+
+<div class="button-container">
+    <button class="button" (click)="sortData('code')">Sortera efter kod</button>
+    <button class="button" (click)="sortData('coursename')">Sortera efter kursnamn</button>
+    <button class="button" (click)="sortData('progression')">Sortera efter progression</button>
+  </div>
+
+<ul class="course-list">
+  <li *ngFor="let course of filteredCoursesList" class="course-item">
     {{ course.code }} - {{ course.coursename }} - {{ course.progression }}
   </li>
 </ul>
-
-<div>
-  <button (click)="sortData('code')">Sort by Code</button>
-  <button (click)="sortData('coursename')">Sort by Name</button>
-  <button (click)="sortData('progression')">Sort by Progression</button>
-</div>

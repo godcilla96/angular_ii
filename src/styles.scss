@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     background-color:rgb(214, 202, 229);
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .course-list {
@@ -22,7 +23,62 @@ body {
   .course-name {
     margin-left: 10px;
   }
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
   
-  .course-progression {
-    color: #007bff; /* or any other color you prefer */
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      background-color: rgb(165, 36, 165);
+      color: white;
+    }
   }
+  
+  .search-input {
+    padding: 10px;
+    width: 98%;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  
+    &:focus {
+      border-color: rgb(165, 36, 165);
+      outline: none;
+    }
+  }
+  
+  .course-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .course-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .button-container {
+    margin-top: 20px;
+  }
+  
