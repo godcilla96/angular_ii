@@ -1,9 +1,17 @@
 <h2>Ramschema</h2>
 
-<ul class="course-list">
-    <li *ngFor="let Course of courseslist" class="course-item">
-      <span class="course-code">{{ Course.code }}</span> - 
-      <span class="course-name">{{ Course.coursename }}</span> - 
-      <span class="course-progression">{{ Course.progression }}</span>
-    </li>
-  </ul>
+<div>
+  <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="applyFilter()">
+</div>
+
+<ul>
+  <li *ngFor="let course of filteredCoursesList">
+    {{ course.code }} - {{ course.coursename }} - {{ course.progression }}
+  </li>
+</ul>
+
+<div>
+  <button (click)="sortData('code')">Sort by Code</button>
+  <button (click)="sortData('coursename')">Sort by Name</button>
+  <button (click)="sortData('progression')">Sort by Progression</button>
+</div>
