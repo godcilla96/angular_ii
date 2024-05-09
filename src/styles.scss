@@ -2,3 +2,27 @@
 body {
     background-color:rgb(214, 202, 229);
 }
+
+.course-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .course-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .course-code {
+    font-weight: bold;
+  }
+  
+  .course-name {
+    margin-left: 10px;
+  }
+  
+  .course-progression {
+    color: #007bff; /* or any other color you prefer */
+  }

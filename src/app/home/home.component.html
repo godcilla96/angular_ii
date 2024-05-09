@@ -1,1 +1,9 @@
 <h2>Ramschema</h2>
+
+<ul class="course-list">
+    <li *ngFor="let Course of courseslist" class="course-item">
+      <span class="course-code">{{ Course.code }}</span> - 
+      <span class="course-name">{{ Course.coursename }}</span> - 
+      <span class="course-progression">{{ Course.progression }}</span>
+    </li>
+  </ul>

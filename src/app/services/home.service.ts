@@ -9,12 +9,12 @@ import { Ramschema } from '../model/ramschema';
 })
 export class HomeService {
 
-  private url:string = "assets/ramschema_hy23.json";
+  private url:string = "assets/ramschema_ht23.json";
 
   constructor(private http: HttpClient) { }
 
-  getRamschema(): Observable<Ramschema> {
-    return this.http.get<Ramschema>(this.url);
+  getRamschema(): Observable<Ramschema[]> {
+    return this.http.get<Ramschema[]>(this.url);
 
   }
 }
