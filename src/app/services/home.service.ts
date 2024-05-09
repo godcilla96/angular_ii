@@ -13,6 +13,7 @@ export class HomeService {
 
   constructor(private http: HttpClient) { }
 
+  //funktion för att hämta in ramschemat
   getRamschema(): Observable<Ramschema[]> {
     return this.http.get<Ramschema[]>(this.url);
 

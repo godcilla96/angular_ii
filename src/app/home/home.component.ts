@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit {
       this.filteredCoursesList = [...this.courseslist];
     });
   }
-
+  
+//sorterar data
   sortData(key: keyof Ramschema) {
     if (this.sortKey === key) {
       this.sortAsc = !this.sortAsc;
