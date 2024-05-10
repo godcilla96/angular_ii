@@ -11,8 +11,19 @@
     <button class="button" (click)="sortData('progression')">Sortera efter progression</button>
   </div>
 
-<ul class="course-list">
-  <li *ngFor="let course of filteredCoursesList" class="course-item">
-    {{ course.code }} - {{ course.coursename }} - {{ course.progression }}
-  </li>
-</ul>
+<table class="course-list">
+  <thead>
+    <tr>
+      <th>Kurskod</th>
+      <th>Kursnamn</th>
+      <th>Progression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of filteredCoursesList" class="course-item">
+      <td>{{ course.code }}</td>
+      <td>{{ course.coursename }}</td>
+      <td>{{ course.progression }}</td>
+    </tr>
+  </tbody>
+</table>
