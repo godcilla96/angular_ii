@@ -1,27 +1,19 @@
-# AngularIi
+# Angular II
+Den här uppgiften går ut på att träna på att göra HTTP-anrop med Angular och HttpClient. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+## Ramschema
+Datan som presenteras i ramschemat är en lokal JSON-fil med namnet ramschema_ht23.json. Filen ligger under mappen "assets". 
 
-## Development server
+## Tillvägagångssätt
+För att implementera JSON-filen till arbetet har en service skapats, samt en model med en fil som definierar interfacet för datans egenskaper. I service-filen definieras HttpClient-anropet. Efter utveckling av koden i de olika filerna kunde sedan valfri variabel från JSON-filen skrivas ut till sidan i home.component.html-filen. Jag valde att skriva ut kursnamn, kurskod och progression. För att kunna sortera och söka data gjordes else-if-satser med sort-funktionen. Webbsidan använder SCSS för layoutdesign.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Resultat
+Resultatet uppfyller kraven för uppgiften:
+- Inhämtning av data från JSON-fil
+- En service som anvädner HttpClient
+- Resultatet presenteras i tabellformat
+- Sortering av data (a-z samt z-a) utifrån kursnamn, kurskod och progession
+- Filtrerings- och sökningsmöjlighet
+- Automatisk uppdatering av användargränssnitt
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Cecilia Lindström

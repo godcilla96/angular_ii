@@ -4,6 +4,8 @@ import { HomeService } from '../services/home.service';
 import { Ramschema } from '../model/ramschema';
 import { FormsModule } from '@angular/forms';
 
+
+//komponenten + dess metadata
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -21,6 +23,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private homeservice : HomeService) {}
 
+//när komponenten initialiseras hämtas data från HomeService
   ngOnInit(): void {
     this.homeservice.getRamschema().subscribe(data => {
       this.courseslist = data;
@@ -28,7 +31,7 @@ export class HomeComponent implements OnInit {
     });
   }
   
-//sorterar data
+//sorterar data via de olika alternativen, om samma rubrik klickas på två gånger byts sorteringsriktningen
   sortData(key: keyof Ramschema) {
     if (this.sortKey === key) {
       this.sortAsc = !this.sortAsc;
@@ -36,7 +39,8 @@ export class HomeComponent implements OnInit {
       this.sortKey = key;
       this.sortAsc = true;
     }
-  
+
+//sorterar kurslista utifrån givet tecken 
     this.filteredCoursesList.sort((a, b) => {
       const valueA = (a[key] as string).toLowerCase();
       const valueB = (b[key] as string).toLowerCase();
@@ -50,6 +54,8 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+//tillämpar filter beroende på sökbegreppet
   applyFilter() {
     this.filteredCoursesList = this.courseslist.filter(course =>
       course.code.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
